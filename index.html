@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0%;
+            padding: 0%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .MainContainer{
+            /* border: 1px solid #17224e; */
+            height: 100vh;
+        }
+        .navContainer{
+            height: 60px;
+            background-color: #17224e;
+            position: fixed;
+            width: 100%;
+            top: 0px;
+            display: flex;
+            justify-content: space-evenly;
+            z-index: 999;
+        }
+    
+        .navList{
+            display: flex;
+            gap: 40px;
+        }
+        .navMainCon{
+            display: flex;
+            align-items: center;
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+        }
+        .logo img{
+            height: 80px;
+        }
+        .navList a{
+            color: white;
+            text-decoration: none;
+            position: relative;
+        }
+        .navList a::after{
+            content: '';
+            position: absolute;
+            left: 0px;
+            bottom: -3px;
+            width: 0%;
+            height: 2px;
+            background-color: #faa41f;
+        }
+        .navList a:hover::after{
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.5s linear;
+        }
+        .heroSection{
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 60px;
+        }
+        .heroLogo img{
+            height: 89vh;
+        }
+        .heroContent{
+            display: flex;
+            align-items: center;
+            align-content: space-evenly;
+        }
+        .heroContentInnerHead{
+            width: 100vh;
+            height: 170px;
+            padding: 10px;
+        }
+        .heroContentInnerHead .heroContentInner{
+            margin-top: 20px;
+        }
+        .heroContentInnerHead .heroContentInnerBtn{
+            margin-top: 20px;
+        }
+        .heroContentInnerHead .heroContentInnerBtn button{
+            background-color: #17224e;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+        }
+        .heroContentInnerHead .heroContentInnerBtn button:hover{
+            transform: scale(1.1);
+            transition: all 0.2s linear;
+            cursor: pointer;
+        }
+        .bestSeller{
+            /* border: 1px solid red; */
+            height: auto;
+            text-align: center;
+        }
+        .sellerContainer{
+            display: grid;
+            grid-template-columns:auto auto auto auto; 
+            row-gap: 100px;
+            margin-top: 50px;
+        }
+        .seller{
+            text-align: center;
+            width: 300px;
+        }
+       .sellerContainer img{
+            height: 200px;
+            width: auto;
+        }
+        .seller{
+            animation: sellerAnime linear;
+            animation-timeline: view();
+            animation-range: entry 0%;
+        }
+
+        @keyframes sellerAnime{
+            from{
+                opacity: 0;
+                scale: 0.5;
+                /* transform: translateX(-100px); */
+            }
+            to{
+                opacity: 1;
+                /* transform: translateX(0px); */
+                scale: 1;
+            }
+        }
+        .featuresContainer{
+            height: auto;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .featuresList img{
+            height: 100px;
+            width: 100px;
+        }
+        .featuresList{
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        /* Last Arrival */
+        .lastArrivalContainer{
+            text-align: center;
+            display: flex;
+            align-items: center;
+            align-content: space-evenly;
+            position: relative;
+            border: 1px solid red;
+        }
+        .lastArrivalImg img{
+            height: 89vh;
+        }
+        .arrivalHead{
+            margin-top: 50px;
+            margin-bottom: 0px;
+            text-align: center;
+        }
+        .lastArrivalImg{
+            animation: arrivalImg linear;
+            animation-timeline: view();
+            animation-range: entry 0%;
+            position: absolute;
+            top: -60px;   
+        }
+        .lastArrivalContent{
+            position: absolute;
+            width: 100vh;
+            height: 170px;
+            left: 650px;
+            top: 80px;
+        }
+        @keyframes arrivalImg{
+            from{
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to{
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+        
+    
+    </style>
+</head>
+<body>
+    <div class="MainContainer">
+        <!-- nav -->
+        <div class="navContainer">
+            <div class="logo">
+                <img src="./images/bird-colorful-gradient-design-vector.png" alt="">
+            </div>
+            <div class="navMainCon">
+                <nav class="navList">
+                    <a href="bestSellerId">Best Seller</a>
+                    <a href="">Features</a>
+                    <a href="">Last Arrival</a>
+                    <a href="">Newly Launched</a>
+                    <a href="">Contact</a>
+                </nav>
+            </div>
+        </div>
+        <!-- hero section -->
+        <div class="heroSection">
+            <div class="heroContent">
+                <div class="heroContentInnerHead">
+                    <div><h1>MOBILE SHOPPING</h1></div>
+                    <div class="heroContentInner"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi iste sunt eos iusto cupiditate explicabo incidunt magnam quaerat provident beatae deserunt aspernatur enim numquam, magni quos sint facere inventore. Eos.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi iste sunt eos iusto cupiditate explicabo incidunt magnam quaerat provident beatae deserunt aspernatur enim numquam, magni quos sint facere inventore. Eos.</p>
+                    </div>
+                    <div class="heroContentInnerBtn">
+                        <button>Read More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="heroLogo">
+                <img src="./images/vecteezy_concept-illustration-of-man-and-woman-friends-having-online_8296859.jpg" alt="">
+            </div>
+        </div>
+        <!-- best seller -->
+        <div class="bestSeller" id="bestSellerId">
+            <div>
+                <h1>Best Seller</h1>
+            </div>
+            <div class="sellerContainer">
+                <div class="seller">
+                    <img src="./images/phn1.jpg" alt="">
+                    <p>Iphone 15(Green, 256GB)</p>
+                    <h2>&#8377;56,600</h2>
+                </div>
+                <div class="seller">
+                    <img src="./images/phn2.jpg" alt="">
+                    <p>Iphone 15 Pro(Natural Titanium, 256GB)</p>
+                    <h2>&#8377;1,27,999</h2>
+                </div>
+                <div class="seller">
+                    <img src="./images/phn3.jpg" alt="">
+                    <p>OnePlus Nord(Mega Blue, 8GB + 128GB)</p>
+                    <h2>&#8377;19,999</h2>
+                </div>
+                <div class="seller">
+                    <img src="./images/phn4.jpg" alt="">
+                    <p>OnePlus 11R 5G(Red, 8GB + 256GB)</p>
+                    <h2>&#8377;56000</h2>
+                </div>
+                <div class="seller">
+                    <img src="./images/phn5.jpg" alt="">
+                    <p>Nothing 2a(Black, 8GB + 256GB)</p>
+                    <h2>&#8377;25,999</h2>
+                </div>
+                <div class="seller">
+                    <img src="./images/phn6.jpg" alt="">
+                    <p>Vivo V40 5G(Lotus Purple, 8GB + 256GB)</p>
+                    <h2>&#8377;34,990</h2>
+                </div>
+                <div class="seller">
+                    <img src="./images/phn7.jpg" alt="">
+                    <p>Iqoo Z7 Pro(Glosy Blue ,6GB + 256GB)</p>
+                    <h2>&#8377;21,999</h2>
+                </div>
+                <div class="seller">
+                    <img src="./images/phn8.jpg" alt="">
+                    <p>Oppo Reno 10 Pro(Purple, 8GB + 256GB)</p>
+                    <h2>&#8377;29,670</h2>
+                </div>
+            </div>
+        </div>
+        <!-- Features -->
+        <div class="featuresContainer">
+            <div>
+                <h1>Features</h1>
+            </div>
+            <div class="featuresList">
+                <div>
+                    <img src="./images/feature1.png" alt="">
+                    <h4>Investment</h4><br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, accusantium error. Culpa praesentium tempora consequatur pariatur, odio ex voluptatum, id hic quos magnam aliquam magni deleniti ab nostrum itaque nemo!</p>
+                </div>
+                <div>
+                    <img src="./images/feature2.png" alt="">
+                    <h4>Customers</h4><br>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum consectetur delectus, perspiciatis, esse consequuntur natus deleniti iste earum libero impedit est rerum rem, illo praesentium? Commodi nulla nemo excepturi beatae.</p>
+                </div>
+                <div>
+                    <img src="./images/feature3.png" alt="">
+                    <h4>Services</h4><br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, eaque. Quam dolorem consectetur iure obcaecati asperiores facilis, reiciendis, aperiam, numquam distinctio delectus et. Iure facere repellat fugiat dolores eaque earum!</p>
+                </div>
+            </div>
+        </div>
+        <!-- New launch -->
+        <h1 class="arrivalHead">Last Arrival</h1>
+        <div class="lastArrivalContainer">
+            <div class="lastArrivalImg">
+                <img src="./images/newArrival.jpg" alt="">
+            </div>
+            <div class="lastArrivalContent">
+                <h3>About This Item</h3>
+                <ul><br>
+                    <li>FORGED IN TITANIUM — iPhone 15 Pro Max has a strong and light aerospace-grade titanium design smartphone glass. And it’s splash, water, and dust resistant.</li><br>
+                    <li>ADVANCED DISPLAY — The 6.7” Super Retina XDR display with ProMotion ramps up refresh rates to Notifications. Plus, with Always-On display, your Lock Screen stays glanceable, so you don’t have to tap it to stay in the know.</li><br>
+                    <li>GAME-CHANGING A17 PRO CHIP — A Pro-class GPU makes mobile games feel so immersive, with rich amazing all-day battery life.</li><br>
+                    <li>POWERFUL PRO CAMERA SYSTEM — Get incredible framing flexibility with 7 pro lenses. Capture</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
