@@ -97,8 +97,8 @@
             transition: all 0.2s linear;
             cursor: pointer;
         }
+        /* Best Seller */
         .bestSeller{
-            /* border: 1px solid red; */
             height: auto;
             text-align: center;
         }
@@ -134,6 +134,7 @@
                 scale: 1;
             }
         }
+        /* Features */
         .featuresContainer{
             height: auto;
             text-align: center;
@@ -149,38 +150,28 @@
             justify-content: space-around;
         }
 
-        /* Last Arrival */
+        /* Lastest Arrival */
+        .arrivalHead{
+            margin-top: 30px;
+            text-align: center;
+        }
         .lastArrivalContainer{
             text-align: center;
             display: flex;
             align-items: center;
             align-content: space-evenly;
-            position: relative;
-            border: 1px solid red;
+            /* border: 1px solid red; */
+            margin-top: -40px;
         }
         .lastArrivalImg img{
             height: 89vh;
         }
-        .arrivalHead{
-            margin-top: 50px;
-            margin-bottom: 0px;
-            text-align: center;
-        }
         .lastArrivalImg{
-            animation: arrivalImg linear;
-            animation-timeline: view();
-            animation-range: entry 0%;
-            position: absolute;
-            top: -60px;   
+        animation: arrivalImg linear;
+        animation-timeline: view();
+        animation-range: entry 0%;
         }
-        .lastArrivalContent{
-            position: absolute;
-            width: 100vh;
-            height: 170px;
-            left: 650px;
-            top: 80px;
-        }
-        @keyframes arrivalImg{
+            @keyframes arrivalImg{
             from{
                 opacity: 0;
                 transform: translateX(-100px);
@@ -190,8 +181,80 @@
                 transform: translateX(0px);
             }
         }
-        
-    
+        .lastArrivalContent{
+            margin-left: 100px;
+        }
+        /* new launched */
+        .launchedList{
+            display: grid;
+            grid-template-columns:auto auto auto; 
+            row-gap: 100px;
+            margin-top: 50px;
+            margin-left: 120px;
+        }
+        .launchedimg{
+            width: 300px;
+        }
+        .launchrating{
+            margin-left: 35px;
+            display: grid;
+            gap: 5px;
+        }
+       .launchedList img{
+            height: 300px;
+            width: auto;
+            transition: all 1s linear;
+        }
+        .launchedHead{
+            text-align: center;
+        }
+        .launchedList img:hover{
+            transform: scale(1.1);
+        }
+        .launchrating img{
+            height: 15px;
+            text-align: left;
+       }
+       .launchRateHead{
+            background-color: red;
+            width:150px;
+            padding: 2px;
+            color: white;
+       }
+       .launchPrice{
+            font-size: 30px;
+       }
+       .launchPhoneName{
+            font-size: 30px;
+       }
+       /* footer */
+       .footer{
+            margin-top: 50px;
+            height: 40vh;
+            background-color: #17224e;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+       }
+       .footer div hr{
+            width: 100%;
+       }
+       .footercontent{
+            margin-top: 40px;
+       }
+       .footerList{
+            line-height: 30px;
+            margin-top: 10px;
+       }
+       .footerList1{
+            line-height: 30px;
+            margin-top: 10px;
+            text-align: center;
+       }
+       .footerList1 img{
+            height: 20px;
+       }
+       
     </style>
 </head>
 <body>
@@ -298,20 +361,112 @@
                 </div>
             </div>
         </div>
-        <!-- New launch -->
-        <h1 class="arrivalHead">Last Arrival</h1>
-        <div class="lastArrivalContainer">
-            <div class="lastArrivalImg">
-                <img src="./images/newArrival.jpg" alt="">
+        <!-- Lastest Arrival -->
+        <h1 class="arrivalHead">Lastest Arrival</h1>
+        <div>
+            <div class="lastArrivalContainer">
+                <div class="lastArrivalImg">
+                    <img src="./images/newArrival.jpg" alt="">
+                </div>
+                <div class="lastArrivalContent">
+                    <h3 class="arrivalItem">About This Item</h3>
+                    <ul><br>
+                        <li>FORGED IN TITANIUM — iPhone 15 Pro Max has a strong and light aerospace-grade titanium design smartphone glass. And it’s splash, water, and dust resistant.</li><br>
+                        <li>ADVANCED DISPLAY — The 6.7” Super Retina XDR display with ProMotion ramps up refresh rates to Notifications. Plus, with Always-On display, your Lock Screen stays glanceable, so you don’t have to tap it to stay in the know.</li><br>
+                        <li>GAME-CHANGING A17 PRO CHIP — A Pro-class GPU makes mobile games feel so immersive, with rich amazing all-day battery life.</li><br>
+                        <li>POWERFUL PRO CAMERA SYSTEM — Get incredible framing flexibility with 7 pro lenses. Capture</li>
+                    </ul>
+                </div>
             </div>
-            <div class="lastArrivalContent">
-                <h3>About This Item</h3>
-                <ul><br>
-                    <li>FORGED IN TITANIUM — iPhone 15 Pro Max has a strong and light aerospace-grade titanium design smartphone glass. And it’s splash, water, and dust resistant.</li><br>
-                    <li>ADVANCED DISPLAY — The 6.7” Super Retina XDR display with ProMotion ramps up refresh rates to Notifications. Plus, with Always-On display, your Lock Screen stays glanceable, so you don’t have to tap it to stay in the know.</li><br>
-                    <li>GAME-CHANGING A17 PRO CHIP — A Pro-class GPU makes mobile games feel so immersive, with rich amazing all-day battery life.</li><br>
-                    <li>POWERFUL PRO CAMERA SYSTEM — Get incredible framing flexibility with 7 pro lenses. Capture</li>
-                </ul>
+        </div>
+        <!-- Newly Launched -->
+        <div class="newLaunched">
+            <div class="launchedHead">
+                <h1>Newly Launched</h1>
+            </div>
+            <div class="launchedList">
+                <div class="launchedimg">
+                    <img src="./images/newlaunch1.jpg" alt="">
+                    <div class="launchrating">
+                        <div class="launchPhoneName">
+                            OnePlus Nord 4 5G(8GB + 128GB)
+                        </div>
+                        <div>
+                            <img src="./images/fullstar.png" alt="">
+                            <img src="./images/fullstar.png" alt="">
+                            <img src="./images/fullstar.png" alt="">
+                            <img src="./images/fullstar.png" alt="">
+                            <img src="./images/halfstar.png" alt="">
+                        </div>
+                        <div>400+ bought in past month</div>
+                        <div class="launchRateHead">Limited time deal</div>
+                        <p class="launchPrice">&#8377;29,670</p>
+                    </div>
+                </div>
+                <div class="launchedimg">
+                    <img src="./images/newlaunch2.jpg" alt="">
+                    <div class="launchrating">
+                        <div class="launchPhoneName">
+                            OnePlus N20 SE(6GB + 128GB)
+                        </div>
+                        <div>
+                            <img src="./images/fullstar.png" alt="">
+                            <img src="./images/fullstar.png" alt="">
+                            <img src="./images/fullstar.png" alt="">
+                            <img src="./images/fullstar.png" alt="">
+                            <img src="./images/halfstar.png" alt="">
+                        </div>
+                        <div>400+ bought in past month</div>
+                        <div class="launchRateHead">Limited time deal</div>
+                        <p class="launchPrice">&#8377;29,670</p>
+                    </div>
+                </div>
+                <div class="launchedimg">
+                    <img src="./images/newlaunch3.webp" alt="">
+                    <div class="launchrating">
+                        <div class="launchPhoneName">
+                            OnePlus Nord CE 3 5G(8GB + 256GB)
+                        </div>
+                        <div>
+                            <img src="./images/fullstar.png" alt="">
+                            <img src="./images/fullstar.png" alt="">
+                            <img src="./images/fullstar.png" alt="">
+                            <img src="./images/fullstar.png" alt="">
+                            <img src="./images/halfstar.png" alt="">
+                        </div>
+                        <div>400+ bought in past month</div>
+                        <div class="launchRateHead">Limited time deal</div>
+                        <p class="launchPrice">&#8377;29,670</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footercontent">
+                <h4>NEED HELP</h4><hr>
+                <div class="footerList">
+                    <p>Contact</p>
+                    <p>+919876543210</p>
+                    <p>Email</p>
+                    <p>test@gamil.com</p>
+                </div>
+            </div>
+            <div class="footercontent">
+                <h4>COMPANY</h4><hr>
+                <div class="footerList">
+                    <p>Best Seller</p>
+                    <p>Features</p>
+                    <p>Last Arrival</p>
+                    <p>Newly Launched</p>
+                </div>
+            </div>
+            <div class="footercontent">
+                <h4>FOLLOW US</h4><hr>
+                <div class="footerList1">
+                    <div><img src="./images/facebook.png" alt=""> Facebook</div>
+                    <div><img src="./images/whatsapp.png" alt=""> Whatsapp</div>
+                    <div><img src="./images/instagram.png" alt=""> Instagram</div>
+                </div>
             </div>
         </div>
     </div>
