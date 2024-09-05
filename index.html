@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <title>Document</title>
     <style>
         *{
@@ -11,59 +13,13 @@
             padding: 0%;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
-        .MainContainer{
-            /* border: 1px solid #17224e; */
-            height: 100vh;
-        }
-        .navContainer{
-            height: 60px;
-            background-color: #17224e;
-            position: fixed;
-            width: 100%;
-            top: 0px;
-            display: flex;
-            justify-content: space-evenly;
-            z-index: 999;
-        }
-    
-        .navList{
-            display: flex;
-            gap: 40px;
-        }
-        .navMainCon{
-            display: flex;
-            align-items: center;
-        }
-        .logo{
-            display: flex;
-            align-items: center;
-        }
-        .logo img{
-            height: 80px;
-        }
-        .navList a{
-            color: white;
-            text-decoration: none;
-            position: relative;
-        }
-        .navList a::after{
-            content: '';
-            position: absolute;
-            left: 0px;
-            bottom: -3px;
-            width: 0%;
-            height: 2px;
-            background-color: #faa41f;
-        }
-        .navList a:hover::after{
-            width: 100%;
-            cursor: pointer;
-            transition: all 0.5s linear;
-        }
+        
+        /* hero section */
         .heroSection{
             display: flex;
             justify-content: space-evenly;
-            margin-top: 60px;
+            /* margin-top: 60px; */
+            border: 1px solid red;
         }
         .heroLogo img{
             height: 89vh;
@@ -74,7 +30,7 @@
             align-content: space-evenly;
         }
         .heroContentInnerHead{
-            width: 100vh;
+            width: 100%;
             height: 170px;
             padding: 10px;
         }
@@ -254,7 +210,63 @@
        .footerList1 img{
             height: 20px;
        }
-       
+
+       /* nav */
+       .navContainer{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #17224e;
+            width: 100%;
+        }
+        .logo img{
+            height: 70px;
+        }
+        .navLinks{
+            display: flex;
+            list-style: none;
+        }
+        .navLinks li{
+            margin-left:30px;
+        }
+        .navLinks li a{
+            text-decoration: none;
+            color: white;
+        }
+        .menu-icon{
+            display: none;
+        }
+        #menu-toggle{
+            display: none;
+        }
+        
+        @media (max-width:600px){
+            .navContainer{
+                border: 1px solid red;
+                width: 100%;
+            }
+            .navLinks {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color:#17224e;
+                position: absolute;
+                top: 60px;
+                left: 0;
+            }
+            .navLinks a{
+                color: white;
+            }
+
+            .menu-icon {
+                display: block;
+                color: white;
+            }
+
+            #menu-toggle:checked + .menu-icon + .navLinks {
+                display: flex;
+            }
+        }
     </style>
 </head>
 <body>
@@ -264,15 +276,15 @@
             <div class="logo">
                 <img src="./images/bird-colorful-gradient-design-vector.png" alt="">
             </div>
-            <div class="navMainCon">
-                <nav class="navList">
-                    <a href="bestSellerId">Best Seller</a>
-                    <a href="">Features</a>
-                    <a href="">Last Arrival</a>
-                    <a href="">Newly Launched</a>
-                    <a href="">Contact</a>
-                </nav>
-            </div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul class="navLinks">
+                <li><a href="">Best Seller</a></li>
+                <li><a href="">Features</a></li>
+                <li><a href="">Last Arrival</a></li>
+                <li><a href="">Newly Launched</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
         </div>
         <!-- hero section -->
         <div class="heroSection">
