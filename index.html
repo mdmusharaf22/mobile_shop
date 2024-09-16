@@ -1,621 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
-    <style>
-        *{
-            box-sizing: border-box;
-            margin: 0%;
-            padding: 0%;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-        /* nav */
-       .navContainer{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #17224e;
-            width: 100%;
-            /* border: 1px solid red; */
-            padding: 0px 20px;
-        }
-        .logo img{
-            height: 70px;
-        }
-        .navLinks{
-            display: flex;
-            list-style: none;
-        }
-        .navLinks li{
-            margin-left:30px;
-        }
-        .navLinks li a{
-            text-decoration: none;
-            color: white;
-        }
-        .menu-icon{
-            display: none;
-        }
-        #menu-toggle{
-            display: none;
-        }
-
-        /* hero section */
-        .heroSection{
-            display: flex;
-            justify-content: space-evenly;
-        }
-        .heroLogo img{
-            height: 89vh;
-        }
-        .heroContent{
-            display: flex;
-            align-items: center;
-            align-content: space-evenly;
-            width: 50%;
-        }
-        .heroContentInnerHead{
-            display: flex;
-            flex-direction: column;
-            gap: 20px;  
-            flex-wrap: wrap;
-        }
-        .heroContentInnerHead .heroContentInnerBtn button{
-            background-color: #17224e;
-            color: white;
-            padding: 6px;
-            border-radius: 5px;
-            outline: none;
-            border: none;
-        }
-        /* Best Seller */
-        .bestSeller{
-            height: auto;
-            text-align: center;
-        }
-        .sellerContainer{
-            /* border: 1px solid red; */
-            display: grid;
-            grid-template-columns:auto auto auto auto; 
-            row-gap: 100px;
-            margin-top: 50px;
-        }
-        .seller{
-            text-align: center;
-            width: 300px;
-        }
-       .sellerContainer img{
-            height: 200px;
-            width: auto;
-        }
-        /* Features */
-        .featuresContainer{
-            /* border: 1px solid red; */
-            height: auto;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .featuresList img{
-            height: 100px;
-            width: 100px;
-        }
-        .featuresList{
-            margin-top: 50px;
-            display: flex;
-            justify-content: space-around;
-        }
-
-         /* Lastest Arrival */
-         .arrivalHead{
-            margin-top: 30px;
-            text-align: center;
-        }
-        .lastArrivalContainer{
-            text-align: center;
-            display: flex;
-            align-items: center;
-            align-content: space-evenly;
-            margin-top: -40px;
-        }
-        .lastArrivalImg img{
-            height: 89vh;
-        }
-        
-        .lastArrivalContent{
-            margin-left: 100px;
-        }
-
-         /* new launched */
-         .launchedList{
-            display: grid;
-            grid-template-columns:auto auto auto; 
-            justify-content: center;
-            column-gap: 100px;
-            margin-top: 50px;
-        }
-        
-        .launchedimg{
-            width: 300px;
-        }
-        .launchrating{
-            margin-left: 35px;
-            display: grid;
-            gap: 5px;
-        }
-        .launchPrice{
-            font-size: 30px;
-       }
-       .launchPhoneName{
-            font-size: 30px;
-       }
-       .launchedList img{
-            height: 300px;
-            width: auto;
-        }
-        .launchedHead{
-            text-align: center;
-        }
-       
-        .launchrating img{
-            height: 15px;
-            text-align: left;
-        }
-        .launchRateHead{
-                background-color: red;
-                width:150px;
-                padding: 2px;
-                color: white;
-        }
-       /* footer */
-        .footer{
-            margin-top: 50px;
-            /* height: 40vh; */
-            background-color: #17224e;
-            color: white;
-            display: flex;
-            justify-content: space-around;
-        }
-        .footer div hr{
-            width: 100%;
-        }
-        .footercontent{
-            margin-top: 40px;
-        }
-        .footerList{
-            line-height: 30px;
-            margin-top: 10px;
-        }
-        .footerList1{
-            line-height: 30px;
-            margin-top: 10px;
-            text-align: center;
-        }
-        .footerList1 img{
-            height: 15px;
-        }
-        /* media query */
-        
-        @media only screen and (max-width:640px){
-            .navContainer{
-                width: 100%;
-                padding: 0px 20px;
-                /* border: 1px solid red; */
-            }
-            .navLinks {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background-color:#17224e;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                gap: 20px;
-                margin-bottom: 10px;
-                align-items: center;
-                padding-bottom: 10px;
-            }
-            .navLinks a{
-                color: white;
-            }
-
-            .menu-icon {
-                display: block;
-                color: white;
-            }
-
-            #menu-toggle:checked + .menu-icon + .navLinks {
-                display: flex;
-            }
-
-            .heroLogo img{
-                height: 100%;
-                width: 100%;
-            }
-            .heroSection{
-                display: flex;
-                flex-wrap: wrap-reverse;
-            }
-            .heroContent{
-                width: 100%;
-                margin: 0px 10px;
-            }
-            
-            .heroContentInnerHead{
-                display: flex;
-                flex-direction: column;
-                gap: 7px;  
-                flex-wrap: wrap;
-                /* border: 1px solid red; */
-                margin-top: 15px;
-            }
-            .heroContentInnerHead h1{
-                /* border: 1px solid red; */
-                font-size: 25px;
-            }
-            .bestSeller{
-                /* border: 1px solid red; */
-                margin-top: 15px;
-            }
-            .bestSeller h1{
-                /* border: 1px solid red; */
-                font-size: 25px;
-            }
-
-            .sellerContainer{
-                display: grid;
-                /* border: 1px solid red; */
-                grid-template-columns:auto; 
-                row-gap: 60px;
-                margin-top: 20px;
-                justify-content: center;
-                align-content: center;
-            }
-            .seller{
-                /* border: 1px solid red; */
-                font-size: 55;
-            }
-            .featuresContainer{
-                /* border: 1px solid red; */
-                text-align: center;
-                margin-top: 15px;
-            }
-            .featuresContainer h1{
-                font-size: 25px;
-            }
-            .featuresList{
-                /* border: 1px solid red; */
-                gap: 10px;
-                margin-top: 15px;
-                display: flex;
-                justify-content: space-around;
-                flex-wrap: wrap;
-            }
-            .arrivalHead{
-                /* border: 1px solid red; */
-                margin-top: 15px;
-                text-align: center;
-                z-index: 0;
-                font-size: 25px;
-            }
-            .lastArrivalContainer{
-                /* border: 1px solid red; */
-                overflow: hidden;
-                text-align: center;
-                display: flex;
-                align-items: center;
-                align-content: space-evenly;
-                flex-wrap: wrap;
-                margin-top: -6px;
-                z-index: 1;
-            }
-            .lastArrivalImg img{
-                height: 400px;
-            }
-            .lastArrivalContent{
-                /* border: 1px solid red; */
-                margin-left: 0px;
-            }
-            .lastArrivalImg{
-                width: 100%;
-                text-align: center;
-            }
-            .launchedList{
-                display: grid;
-                grid-template-columns:auto; 
-                row-gap: 30px;
-                /* border: 1px solid red; */
-                margin-top:15px;
-            }
-            .newLaunched{
-                /* border: 1px solid red; */
-                margin-top: 15px;
-            }
-            .launchedHead h1{
-                font-size: 25px;
-            }
-            .launchedimg{
-                /* border: 1px solid red; */
-                overflow: hidden;
-            }
-            .launchedimg img{
-                height: 300px;
-            }
-            .launchrating{
-                /* border: 1px solid red; */
-                /* justify-content: center;
-                align-content: center; */
-                margin-left: 35px;
-                word-wrap: break-word;
-                width: 240px;
-            }
-            .launchPhoneName{
-                /* border: 1px solid red; */
-                font-size: 18px;
-            }
-            .launchratingstar img{
-                height: 10px;
-            }
-            .launchcontent{
-                font-size: 12px;
-            }
-            .launchRateHead{
-                background-color: red;
-                width:130px;
-                padding: 2px;
-                color: white;
-            }
-            .launchPrice{
-                font-size: 22px;
-            }
-            .footer{
-                /* border: 1px solid red; */
-                margin-top: 30px;
-                background-color: #17224e;
-                color: white;
-                display: block;
-                justify-content: center;
-                align-content: center;
-                padding: 10px 0px;
-                /* display: flex;
-                justify-content: space-around;
-                flex-wrap: wrap; */
-            }
-            .footercontent{
-                margin-top: 10px;
-                /* margin-left: 50px; */
-            }
-            .footerList{
-                margin-left: 30px;
-            }
-            .footerList1{
-                /* border: 1px solid red; */
-                margin-left: 27px;
-                text-align: left;
-            }
-            .footerList1 img{
-                height: 10px;
-            }
-          
-        }
-    </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="MainContainer">
-        <!-- nav -->
+      <!-- nav -->
+      <div class="navsection">
         <div class="navContainer">
-            <div class="logo">
-                <img src="./images/logo2.png" alt="">
-            </div>
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="menu-icon">&#9776;</label>
-            <ul class="navLinks">
-                <li><a href="">Best Seller</a></li>
-                <li><a href="">Features</a></li>
-                <li><a href="">Last Arrival</a></li>
-                <li><a href="">Newly Launched</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
+          <div class="logo">
+            <img src="./images/logo2.png" alt="" />
+          </div>
+          <input type="checkbox" id="menu-toggle" />
+          <label for="menu-toggle" class="menu-icon">&#9776;</label>
+          <ul class="navLinks">
+            <li><a href="">Best Seller</a></li>
+            <li><a href="">Features</a></li>
+            <li><a href="">Last Arrival</a></li>
+            <li><a href="">Newly Launched</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
         </div>
-        <!-- hero section -->
-        <div class="heroSection">
-            <div class="heroContent">
-                <div class="heroContentInnerHead">
-                    <div><h1>MOBILE SHOPPING</h1></div>
-                    <div class="heroContentInner"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi iste sunt eos iusto cupiditate explicabo incidunt magnam quaerat provident beatae deserunt aspernatur enim numquam, magni quos sint facere inventore. Eos.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi iste sunt eos iusto cupiditate explicabo incidunt magnam quaerat provident beatae deserunt aspernatur enim numquam, magni quos sint facere inventore. Eos.</p>
-                    </div>
-                    <div class="heroContentInnerBtn">
-                        <button>Read More</button>
-                    </div>
-                </div>
+      </div>
+      <!-- hero section -->
+      <div class="heroSection">
+        <div class="herocontainer">
+          <div class="heroContent">
+            <div class="heroContentInnerHead">
+              <div><h1>MOBILE SHOPPING</h1></div>
+              <div class="heroContentInner">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Quasi iste sunt eos iusto cupiditate explicabo incidunt magnam
+                  quaerat provident beatae deserunt aspernatur enim numquam,
+                  magni quos sint facere inventore. Eos.Lorem ipsum dolor sit
+                  amet consectetur, adipisicing elit. Quasi iste sunt eos iusto
+                  cupiditate explicabo incidunt magnam quaerat provident beatae
+                  deserunt aspernatur enim numquam, magni quos sint facere
+                  inventore. Eos.
+                </p>
+              </div>
+              <div class="heroContentInnerBtn">
+                <button>Read More</button>
+              </div>
             </div>
-            <div class="heroLogo">
-                <img src="./images/vecteezy_concept-illustration-of-man-and-woman-friends-having-online_8296859.jpg" alt="">
-            </div>
+          </div>
+          <div class="heroLogo">
+            <img
+              src="./images/vecteezy_concept-illustration-of-man-and-woman-friends-having-online_8296859.jpg"
+              alt=""
+            />
+          </div>
         </div>
-        <!-- best seller -->
-        <div class="bestSeller">
-            <div>
-                <h1>Best Seller</h1>
-            </div>
-            <div class="sellerContainer">
-                <div class="seller">
-                    <img src="./images/phn1.jpg" alt="">
-                    <p>Iphone 15(Green, 256GB)</p>
-                    <h2>&#8377;56,600</h2>
-                </div>
-                <div class="seller">
-                    <img src="./images/phn2.jpg" alt="">
-                    <p>Iphone 15 Pro(Natural Titanium, 256GB)</p>
-                    <h2>&#8377;1,27,999</h2>
-                </div>
-                <div class="seller">
-                    <img src="./images/phn3.jpg" alt="">
-                    <p>OnePlus Nord(Mega Blue, 8GB + 128GB)</p>
-                    <h2>&#8377;19,999</h2>
-                </div>
-                <div class="seller">
-                    <img src="./images/phn4.jpg" alt="">
-                    <p>OnePlus 11R 5G(Red, 8GB + 256GB)</p>
-                    <h2>&#8377;56000</h2>
-                </div>
-                <div class="seller">
-                    <img src="./images/phn5.jpg" alt="">
-                    <p>Nothing 2a(Black, 8GB + 256GB)</p>
-                    <h2>&#8377;25,999</h2>
-                </div>
-                <div class="seller">
-                    <img src="./images/phn6.jpg" alt="">
-                    <p>Vivo V40 5G(Lotus Purple, 8GB + 256GB)</p>
-                    <h2>&#8377;34,990</h2>
-                </div>
-                <div class="seller">
-                    <img src="./images/phn7.jpg" alt="">
-                    <p>Iqoo Z7 Pro(Glosy Blue ,6GB + 256GB)</p>
-                    <h2>&#8377;21,999</h2>
-                </div>
-                <div class="seller">
-                    <img src="./images/phn8.jpg" alt="">
-                    <p>Oppo Reno 10 Pro(Purple, 8GB + 256GB)</p>
-                    <h2>&#8377;29,670</h2>
-                </div>
-            </div>
-        </div>
-        <!-- Features -->
-        <div class="featuresContainer">
-            <div>
-                <h1>Features</h1>
-            </div>
-            <div class="featuresList">
-                <div>
-                    <img src="./images/feature1.png" alt="">
-                    <h4>Investment</h4><br>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, accusantium error. Culpa praesentium tempora consequatur pariatur, odio ex voluptatum, id hic quos magnam aliquam magni deleniti ab nostrum itaque nemo!</p>
-                </div>
-                <div>
-                    <img src="./images/feature2.png" alt="">
-                    <h4>Customers</h4><br>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum consectetur delectus, perspiciatis, esse consequuntur natus deleniti iste earum libero impedit est rerum rem, illo praesentium? Commodi nulla nemo excepturi beatae.</p>
-                </div>
-                <div>
-                    <img src="./images/feature3.png" alt="">
-                    <h4>Services</h4><br>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, eaque. Quam dolorem consectetur iure obcaecati asperiores facilis, reiciendis, aperiam, numquam distinctio delectus et. Iure facere repellat fugiat dolores eaque earum!</p>
-                </div>
-            </div>
-        </div>
-        <!-- Lastest Arrival -->
-        <h1 class="arrivalHead">Lastest Arrival</h1>
+      </div>
+      <!-- best seller -->
+      <div class="bestSeller">
         <div>
-            <div class="lastArrivalContainer">
-                <div class="lastArrivalImg">
-                    <img src="./images/newArrival.jpg" alt="">
-                </div>
-                <div class="lastArrivalContent">
-                    <h3 class="arrivalItem">About This Item</h3>
-                    <ul><br>
-                        <li>FORGED IN TITANIUM — iPhone 15 Pro Max has a strong and light aerospace-grade titanium design smartphone glass. And it’s splash, water, and dust resistant.</li><br>
-                        <li>ADVANCED DISPLAY — The 6.7” Super Retina XDR display with ProMotion ramps up refresh rates to Notifications. Plus, with Always-On display, your Lock Screen stays glanceable, so you don’t have to tap it to stay in the know.</li><br>
-                        <li>GAME-CHANGING A17 PRO CHIP — A Pro-class GPU makes mobile games feel so immersive, with rich amazing all-day battery life.</li><br>
-                        <li>POWERFUL PRO CAMERA SYSTEM — Get incredible framing flexibility with 7 pro lenses. Capture</li>
-                    </ul>
-                </div>
-            </div>
+          <h1>Best Seller</h1>
         </div>
-        <!-- Newly Launched -->
-        <div class="newLaunched">
-            <div class="launchedHead">
-                <h1>Newly Launched</h1>
-            </div>
-            <div class="launchedList">
-                <div class="launchedimg">
-                    <img src="./images/newlaunch1.jpg" alt="">
-                    <div class="launchrating">
-                        <div class="launchPhoneName">
-                            OnePlus Nord 4(8GB + 128GB)
-                        </div>
-                        <div class="launchratingstar">
-                            <img src="./images/fullstar.png" alt="">
-                            <img src="./images/fullstar.png" alt="">
-                            <img src="./images/fullstar.png" alt="">
-                            <img src="./images/fullstar.png" alt="">
-                            <img src="./images/halfstar.png" alt="">
-                        </div>
-                        <div class="launchcontent">400+ bought in past month</div>
-                        <div class="launchRateHead">Limited time deal</div>
-                        <p class="launchPrice">&#8377;29,670</p>
-                    </div>
-                </div>
-                <div class="launchedimg">
-                    <img src="./images/newlaunch2.jpg" alt="">
-                    <div class="launchrating">
-                        <div class="launchPhoneName">
-                            OnePlus N20 SE(6GB + 128GB)
-                        </div>
-                        <div class="launchratingstar">
-                            <img src="./images/fullstar.png" alt="">
-                            <img src="./images/fullstar.png" alt="">
-                            <img src="./images/fullstar.png" alt="">
-                            <img src="./images/fullstar.png" alt="">
-                            <img src="./images/halfstar.png" alt="">
-                        </div>
-                        <div>400+ bought in past month</div>
-                        <div class="launchRateHead">Limited time deal</div>
-                        <p class="launchPrice">&#8377;29,670</p>
-                    </div>
-                </div>
-                <div class="launchedimg">
-                    <img src="./images/newlaunch3.webp" alt="">
-                    <div class="launchrating">
-                        <div class="launchPhoneName">
-                            OnePlus Nord CE(8GB + 256GB)
-                        </div>
-                        <div class="launchratingstar">
-                            <img src="./images/fullstar.png" alt="">
-                            <img src="./images/fullstar.png" alt="">
-                            <img src="./images/fullstar.png" alt="">
-                            <img src="./images/fullstar.png" alt="">
-                            <img src="./images/halfstar.png" alt="">
-                        </div>
-                        <div>400+ bought in past month</div>
-                        <div class="launchRateHead">Limited time deal</div>
-                        <p class="launchPrice">&#8377;29,670</p>
-                    </div>
-                </div>
-            </div>
+        <div class="sellerContainer">
+          <div class="seller">
+            <img src="./images/phn1.jpg" alt="" />
+            <p>Iphone 15(Green, 256GB)</p>
+            <h2>&#8377;56,600</h2>
+          </div>
+          <div class="seller">
+            <img src="./images/phn2.jpg" alt="" />
+            <p>Iphone 15 Pro(Natural Titanium, 256GB)</p>
+            <h2>&#8377;1,27,999</h2>
+          </div>
+          <div class="seller">
+            <img src="./images/phn3.jpg" alt="" />
+            <p>OnePlus Nord(Mega Blue, 8GB + 128GB)</p>
+            <h2>&#8377;19,999</h2>
+          </div>
+          <div class="seller">
+            <img src="./images/phn4.jpg" alt="" />
+            <p>OnePlus 11R 5G(Red, 8GB + 256GB)</p>
+            <h2>&#8377;56000</h2>
+          </div>
+          <div class="seller">
+            <img src="./images/phn5.jpg" alt="" />
+            <p>Nothing 2a(Black, 8GB + 256GB)</p>
+            <h2>&#8377;25,999</h2>
+          </div>
+          <div class="seller">
+            <img src="./images/phn6.jpg" alt="" />
+            <p>Vivo V40 5G(Lotus Purple, 8GB + 256GB)</p>
+            <h2>&#8377;34,990</h2>
+          </div>
+          <div class="seller">
+            <img src="./images/phn7.jpg" alt="" />
+            <p>Iqoo Z7 Pro(Glosy Blue ,6GB + 256GB)</p>
+            <h2>&#8377;21,999</h2>
+          </div>
+          <div class="seller">
+            <img src="./images/phn8.jpg" alt="" />
+            <p>Oppo Reno 10 Pro(Purple, 8GB + 256GB)</p>
+            <h2>&#8377;29,670</h2>
+          </div>
         </div>
-        <!-- footer -->
-        <div class="footer">
-            <div class="footercontent">
-                <h4>NEED HELP</h4><hr>
-                <div class="footerList">
-                    <p>Contact</p>
-                    <p>+919876543210</p>
-                    <p>Email</p>
-                    <p>test@gamil.com</p>
-                </div>
-            </div>
-            <div class="footercontent">
-                <h4>COMPANY</h4><hr>
-                <div class="footerList">
-                    <p>Best Seller</p>
-                    <p>Features</p>
-                    <p>Last Arrival</p>
-                    <p>Newly Launched</p>
-                </div>
-            </div>
-            <div class="footercontent">
-                <h4>FOLLOW US</h4><hr>
-                <div class="footerList1">
-                    <p><img src="./images/facebook.png" alt=""> Facebook</p>
-                    <p><img src="./images/whatsapp.png" alt=""> Whatsapp</p>
-                    <p><img src="./images/instagram.png" alt=""> Instagram</p>
-                </div>
-            </div>
+      </div>
+      <!-- Features -->
+      <div class="featuresContainer">
+        <div>
+          <h1>Features</h1>
         </div>
+        <div class="featuresList">
+          <div>
+            <img src="./images/feature1.png" alt="" />
+            <h4>Investment</h4>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
+              accusantium error. Culpa praesentium tempora consequatur pariatur,
+              odio ex voluptatum, id hic quos magnam aliquam magni deleniti ab
+              nostrum itaque nemo!
+            </p>
+          </div>
+          <div>
+            <img src="./images/feature2.png" alt="" />
+            <h4>Customers</h4>
+            <br />
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum
+              consectetur delectus, perspiciatis, esse consequuntur natus
+              deleniti iste earum libero impedit est rerum rem, illo
+              praesentium? Commodi nulla nemo excepturi beatae.
+            </p>
+          </div>
+          <div>
+            <img src="./images/feature3.png" alt="" />
+            <h4>Services</h4>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui,
+              eaque. Quam dolorem consectetur iure obcaecati asperiores facilis,
+              reiciendis, aperiam, numquam distinctio delectus et. Iure facere
+              repellat fugiat dolores eaque earum!
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Lastest Arrival -->
+      <div class="arrivalcontainer">
+        <h1 class="arrivalHead">Lastest Arrival</h1>
+        <div class="lastArrivalContainer">
+          <div class="lastArrivalImg">
+            <img src="./images/newArrival.jpg" alt="" />
+          </div>
+          <div class="lastArrivalContent">
+            <h3 class="arrivalItem">About This Item</h3>
+            <ul>
+              <br />
+              <li>
+                FORGED IN TITANIUM — iPhone 15 Pro Max has a strong and light
+                aerospace-grade titanium design smartphone glass. And it’s
+                splash, water, and dust resistant.
+              </li>
+              <br />
+              <li>
+                ADVANCED DISPLAY — The 6.7” Super Retina XDR display with
+                ProMotion ramps up refresh rates to Notifications. Plus, with
+                Always-On display, your Lock Screen stays glanceable, so you
+                don’t have to tap it to stay in the know.
+              </li>
+              <br />
+              <li>
+                GAME-CHANGING A17 PRO CHIP — A Pro-class GPU makes mobile games
+                feel so immersive, with rich amazing all-day battery life.
+              </li>
+              <br />
+              <li>
+                POWERFUL PRO CAMERA SYSTEM — Get incredible framing flexibility
+                with 7 pro lenses. Capture
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Newly Launched -->
+      <div class="newLaunched">
+        <div class="launchedHead">
+          <h1>Newly Launched</h1>
+        </div>
+        <div class="launchedList">
+          <div class="launchedimg">
+            <img src="./images/newlaunch1.jpg" alt="" />
+            <div class="launchrating">
+              <div class="launchPhoneName">OnePlus Nord 4(8GB + 128GB)</div>
+              <div class="launchratingstar">
+                <img src="./images/fullstar.png" alt="" />
+                <img src="./images/fullstar.png" alt="" />
+                <img src="./images/fullstar.png" alt="" />
+                <img src="./images/fullstar.png" alt="" />
+                <img src="./images/halfstar.png" alt="" />
+              </div>
+              <div class="launchcontent">400+ bought in past month</div>
+              <div class="launchRateHead">Limited time deal</div>
+              <p class="launchPrice">&#8377;29,670</p>
+            </div>
+          </div>
+          <div class="launchedimg">
+            <img src="./images/newlaunch2.jpg" alt="" />
+            <div class="launchrating">
+              <div class="launchPhoneName">OnePlus N20 SE(6GB + 128GB)</div>
+              <div class="launchratingstar">
+                <img src="./images/fullstar.png" alt="" />
+                <img src="./images/fullstar.png" alt="" />
+                <img src="./images/fullstar.png" alt="" />
+                <img src="./images/fullstar.png" alt="" />
+                <img src="./images/halfstar.png" alt="" />
+              </div>
+              <div>400+ bought in past month</div>
+              <div class="launchRateHead">Limited time deal</div>
+              <p class="launchPrice">&#8377;29,670</p>
+            </div>
+          </div>
+          <div class="launchedimg">
+            <img src="./images/newlaunch3.webp" alt="" />
+            <div class="launchrating">
+              <div class="launchPhoneName">OnePlus Nord CE(8GB + 256GB)</div>
+              <div class="launchratingstar">
+                <img src="./images/fullstar.png" alt="" />
+                <img src="./images/fullstar.png" alt="" />
+                <img src="./images/fullstar.png" alt="" />
+                <img src="./images/fullstar.png" alt="" />
+                <img src="./images/halfstar.png" alt="" />
+              </div>
+              <div>400+ bought in past month</div>
+              <div class="launchRateHead">Limited time deal</div>
+              <p class="launchPrice">&#8377;29,670</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- footer -->
+      <div class="footer">
+        <div class="footercontent">
+          <h4>NEED HELP</h4>
+          <hr />
+          <div class="footerList">
+            <p>Contact</p>
+            <p>+919876543210</p>
+            <p>Email</p>
+            <p>test@gamil.com</p>
+          </div>
+        </div>
+        <div class="footercontent">
+          <h4>COMPANY</h4>
+          <hr />
+          <div class="footerList">
+            <p>Best Seller</p>
+            <p>Features</p>
+            <p>Last Arrival</p>
+            <p>Newly Launched</p>
+          </div>
+        </div>
+        <div class="footercontent">
+          <h4>FOLLOW US</h4>
+          <hr />
+          <div class="footerList1">
+            <p><img src="./images/facebook.png" alt="" /> Facebook</p>
+            <p><img src="./images/whatsapp.png" alt="" /> Whatsapp</p>
+            <p><img src="./images/instagram.png" alt="" /> Instagram</p>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
