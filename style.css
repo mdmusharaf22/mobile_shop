@@ -177,6 +177,15 @@
 
 
  /* new launched */
+ .mainLaunched{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ .newLaunched{
+    width: 90%;
+ }
  .launchedList{
     display: grid;
     grid-template-columns:auto auto auto; 
@@ -220,7 +229,8 @@
 /* footer */
 .footer{
     margin-top: 50px;
-    /* height: 40vh; */
+    padding-bottom:80px;
+    padding-top: 30px;
     background-color: #17224e;
     color: white;
     display: flex;
@@ -252,6 +262,7 @@
         padding: 0px 20px;
         /* border: 1px solid red; */
     }
+    
     .navLinks {
         display: none;
         flex-direction: column;
@@ -277,32 +288,56 @@
     #menu-toggle:checked + .menu-icon + .navLinks {
         display: flex;
     }
-
+  
+    .heroSection{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap-reverse;
+        width: 100%;
+    }
+    .heroContentInnerHead .heroContentInnerBtn button{
+        background-color: #17224e;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid #17224e;
+    }
+    .heroContentInnerHead .heroContentInnerBtn button:hover{
+        background-color: transparent;
+        color: #17224e;
+    }
+    .herocontainer{
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap-reverse;
+        
+    }
     .heroLogo img{
         height: 100%;
         width: 100%;
     }
-    .heroSection{
-        display: flex;
-        flex-wrap: wrap-reverse;
+    .heroLogo{
+        width: 100%;
     }
     .heroContent{
         width: 100%;
         margin: 0px 10px;
+
     }
-    
     .heroContentInnerHead{
         display: flex;
         flex-direction: column;
         gap: 7px;  
         flex-wrap: wrap;
-        /* border: 1px solid red; */
         margin-top: 15px;
     }
     .heroContentInnerHead h1{
-        /* border: 1px solid red; */
         font-size: 25px;
     }
+
+
     .bestSeller{
         /* border: 1px solid red; */
         margin-top: 15px;
